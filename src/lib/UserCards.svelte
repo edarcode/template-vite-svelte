@@ -1,6 +1,5 @@
 <script>
-	import Each from "./Each.svelte";
-	import UserCard from "./UserCard.svelte";
+	import EachUsers from "./EachUsers.svelte";
 
 	export let users = [];
 </script>
@@ -8,7 +7,7 @@
 <section class="wrapperUsers">
 	<h1 class="title">Usuarios</h1>
 	<div class="users">
-		<Each array={users} component={UserCard} />
+		<EachUsers {users} />
 	</div>
 </section>
 

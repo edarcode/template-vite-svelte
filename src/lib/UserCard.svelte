@@ -1,6 +1,6 @@
 <script>
-	export let props;
-	const { name, age, country } = props;
+	export let user;
+	const { name, age, country } = user;
 </script>
 
 <article class="card">
