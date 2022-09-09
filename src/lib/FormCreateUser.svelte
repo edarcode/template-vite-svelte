@@ -1,12 +1,10 @@
 <script>
 	export let addUser;
+	const infoUser = { name: "", age: "", country: "" };
 
 	const handleSubmitCreatePerson = e => {
 		e.preventDefault();
-		const name = e.target.name.value;
-		const age = e.target.age.value;
-		const country = e.target.country.value;
-
+		const { name, age, country } = infoUser;
 		const person = { id: crypto.randomUUID(), name, age, country };
 
 		addUser(person);
@@ -14,9 +12,9 @@
 </script>
 
 <form on:submit={handleSubmitCreatePerson}>
-	<input placeholder="Nombre" name="name" />
-	<input type="number" placeholder="Edad" name="age" />
-	<input placeholder="País" name="country" />
+	<input placeholder="Nombre" bind:value={infoUser.name} />
+	<input type="number" placeholder="Edad" bind:value={infoUser.age} />
+	<input placeholder="País" bind:value={infoUser.country} />
 	<button>Crear usuario</button>
 </form>
 
